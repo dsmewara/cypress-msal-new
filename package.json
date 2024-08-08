@@ -1,0 +1,15 @@
+{
+  "name": "cypress-msal-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dalpat Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
