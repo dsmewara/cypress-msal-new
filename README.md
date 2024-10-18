@@ -1,58 +1,133 @@
-Testcase ID	Test Case Title	Description	Precondition	Steps	Expected Result	Actual Result
-TC-001	Login with Valid Credentials (Existing User)	Verify that an existing user can log in with valid credentials.	User account exists.	"1. Navigate to the login page.
-2. Enter valid credentials.
-3. Click Login."	User is redirected to the Microsoft login, then to the home page with the active customer displayed.	Same as Expected
-TC-002	Login with Invalid Credentials	Verify that an existing user cannot log in with invalid credentials.	User account exists.	"1. Navigate to the login page.
-2. Enter invalid credentials.
-3. Click Login."	Error message is displayed, and user remains on the login page.	Same as Expected
-TC-003	Login with Valid Credentials (New User)	Verify that a new user can log in with valid credentials.	User account is created.	"1. Navigate to the login page.
-2. Enter valid credentials.
-3. Click Login."	User is redirected to the Microsoft login, then to the home page with no active customer displayed.	Same as Expected
-TC-004	No Customers for New User	Verify that a new user sees no customers in the dropdown.	User account is created.	"1. Log in with new user credentials.
-2. Click on the user icon."	"No customer for this user" message is displayed.	Same as Expected
-TC-005	Active Customer Display on Login	Verify that the active customer is displayed upon login.	User account exists with an active customer.	1. Log in with valid credentials.	Active customer is shown in the left corner.	Same as Expected
-TC-006	Switch Active Customer	Verify that selecting a new customer from the dropdown updates the view.	User is logged in with multiple associated customers.	"1. Click on the user icon.
-2. Select a different customer from the dropdown."	The view updates to reflect the newly selected customer and its associated data.	Same as Expected
-TC-007	Role-Based Access - Designer Role (Vodafone Portugal)	Verify actions for Designer role at Vodafone Portugal.	User is logged in with Designer role.	"1. Access Site Concept.
-2. Perform actions (Read, Write, Delete)."	User can perform actions as per permissions.	Same as Expected
-TC-008	Role-Based Access - Approver Role (Orange Spain)	Verify actions for Approver role at Orange Spain.	User is logged in with Approver role.	"1. Access Site Concept.
-2. Perform actions (Approve, Reject)."	User can perform actions as per permissions.	Same as Expected
-TC-009	Role-Based Access - App Role (Vodafone Spain)	Verify actions for App role at Vodafone Spain.	User is logged in with App role.	"1. Access Site Concept.
-2. Perform actions (Read, List)."	User can perform actions as per permissions.	Same as Expected
-TC-010	Role-Based Access - All Roles (Demo User)	Verify actions for Demo user with all roles.	User is logged in as a Demo user.	"1. Access Site Concept.
-2. Perform all actions."	User can perform all actions as per permissions.	Same as Expected
-TC-011	Designer Role - PSD Permissions (Vodafone Portugal)	Verify actions for Designer role on PSDs at Vodafone Portugal.	User is logged in with Designer role.	"1. Access PSD.
-2. Perform actions (Read, Write, Delete)."	User can perform actions as per permissions.	Same as Expected
-TC-012	Approver Role - PSD Permissions (Orange Spain)	Verify actions for Approver role on PSDs at Orange Spain.	User is logged in with Approver role.	"1. Access PSD.
-2. Perform actions (Approve, Reject)."	User can perform actions as per permissions.	Same as Expected
-TC-013	App Role - PSD Permissions (Vodafone Spain)	Verify actions for App role on PSDs at Vodafone Spain.	User is logged in with App role.	"1. Access PSD.
-2. Perform actions (Read, List)."	User can perform actions as per permissions.	Same as Expected
-TC-014	All Roles - PSD Permissions (Demo User)	Verify actions for Demo user on PSDs.	User is logged in as a Demo user.	"1. Access PSD.
-2. Perform all actions."	User can perform all actions as per permissions.	Same as Expected
-TC-015	Role-Based Access - Metadata Read for All Roles	Verify metadata read permissions for all roles.	User is logged in with respective roles.	1. Access metadata for Site Concepts and PSDs.	User can read metadata based on role.	Same as Expected
-TC-016	Verify Page Refresh on Role Change	Verify that the page refreshes to reflect the correct roles upon login.	User is logged in with multiple roles.	"1. Log in and change roles.
-2. Refresh page."	Page displays the updated role and associated permissions.	Same as Expected
-TC-017	Session Timeout Handling	Verify the system's behavior when the session times out during an operation.	User is logged in.	"1. Leave the session idle until timeout.
-2. Attempt to perform an action."	User is redirected to the login page with a timeout message.	Fail
-TC-018	Verify Error Message on Action Post-Timeout	Verify that the appropriate error message is shown after timeout.	User is logged in.	"1. Leave the session idle until timeout.
-2. Attempt to approve a Site Concept."	"Session expired" message is displayed.	Same as Expected
-TC-019	Customer Change Notification	Verify that users are notified when their Customer changes.	User is logged in.	"1. Change Customer .
-2. Refresh page."	User receives a notification of the Customer change.	Same as Expected
-TC-020	Update Customer Association for Existing User	Verify that an existing user can update their associated customers.	User is logged in with existing associations.	"1. Go to user settings.
-2. Update customer associations."	User's associations are updated successfully.	Same as Expected
-TC-021	Verify Customer Association for New User	Verify that a new user has no customer associations upon login.	New user account exists.	1. Log in with new user credentials.	"No customer for this user" message is displayed.	Same as Expected
-TC-022	Verify Default Customer Selection	Verify that the default customer is selected after login.	User is logged in with multiple customers.	"1. Log in.
-2. Check the default customer in the dropdown."	Default active customer is selected.	Same as Expected
-TC-023	Verify Permissions for Designer Role on Customer Change	Verify that a Designer role retains permissions when switching customers.	User is logged in as Designer.	"1. Switch customer.
-2. Access Site Concept."	User retains Designer permissions for the new customer.	Same as Expected
-TC-024	Verify Permissions for Approver Role on Customer Change	Verify that an Approver role retains permissions when switching customers.	User is logged in as Approver.	"1. Switch customer.
-2. Access Site Concept."	User retains Approver permissions for the new customer.	Same as Expected
-TC-025	Verify Permissions for App Role on Customer Change	Verify that an App role retains permissions when switching customers.	User is logged in as App role.	"1. Switch customer.
-2. Access Site Concept."	User retains App permissions for the new customer.	Same as Expected
-TC-026	Verify Custom Messages for No Customers	Verify that appropriate messages are shown when no customers are available.	User is logged in with no customer associations.	1. Click on the user icon.	"No customer for this user" message is displayed.	Same as Expected
-TC-027	Validate Customer-Specific Roles and Permissions	Verify that users see permissions based on customer roles.	User is logged in with specific customer roles.	"1. Access Site Concept and PSD.
-2. Check permissions based on customer role."	User sees permissions aligned with the customer role.	Same as Expected
-TC-028	Validate Access Control for Site Concept Actions	Verify that users can perform actions on Site Concepts based on roles.	User is logged in with specific roles.	"1. Access Site Concepts.
-2. Perform actions (Create, Read, Update, Delete)."	Actions are allowed or restricted based on user role.	Same as Expected
-TC-029	Validate Access Control for PSD Actions	Verify that users can perform actions on PSDs based on roles.	User is logged in with specific roles.	"1. Access PSD.
-2. Perform actions (Create, Read, Update, Delete)."	Actions are allowed or restricted based on user role.	Same as Expected
+Test Case ID	Title	Description	Preconditions	Step	Actions	Expected Result	
+TC-001	Full Access for Designer Role (sc.write, sc.read, sc.delete, psd.write, psd.read, psd.delete)	Verify full access to SC (Site Concept) and PSD (Proposed Site Deliverable) functionalities for a user with Designer AD role and Designer customer role.	"User has Designer AD role and Designer customer role.
+User must have valid Microsoft account credentials and MFA configured."	1	Open the application URL.	The login page is displayed.	
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page with full access to SC and PSD functionalities.	
+				6	Navigate to the SC section from the main menu.	User can access the Site Concept functionalities.	
+				7	Perform SC actions: Create, View, Edit, Delete.	User can create a new Site Concept, view the list of existing Site Concepts, edit details, and delete Site Concepts.	
+				8	Navigate to the PSD section from the main menu.	User can access the Proposed Site Deliverable functionalities.	
+				9	Perform PSD actions: Create, View, Edit, Delete.	User can create a new Proposed Site Deliverable, view the list of existing Proposed Site Deliverables, edit details, and delete Proposed Site Deliverables.	
+				10	Verify access control for SC and PSD actions.	All SC and PSD actions (Create, Edit, Delete) are enabled and accessible without restrictions.	
+TC-002	Full Approval Rights for Approver Role (sc.write, sc.read, sc.delete, psd.write, psd.read, psd.delete)	Verify full approval/reject rights for SC (Site Concept) and PSD (Proposed Site Deliverable) for a user with Approver AD role and Approver customer role.	"User has Approver AD role and Approver customer role.
+User must have valid Microsoft account credentials and MFA configured."	1	Open the application URL.	The login page is displayed.	
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page with full approval rights for SC and PSD.	
+				6	Navigate to SC section from the main menu.	User can access the SC functionalities.	
+				7	Perform an approval action on a Site Concept.	Approve Site Concept.	
+				8	Perform a rejection action on a Site Concept.	Reject Site Concept.	
+				9	Navigate to PSD section from the main menu.	User can access the PSD functionalities.	
+				10	Perform an approval action on a Proposed Site Deliverable.	Approve Proposed Site Deliverable.	
+				11	Perform a rejection action on a Proposed Site Deliverable.	Reject Proposed Site Deliverable.	
+					Access Control Verification:	All approval actions (Approve, Reject) should be enabled and accessible without restrictions.	
+TC-003	Read-Only Access for App User Role	Verify read-only access to SC (Site Concept) and PSD (Proposed Site Deliverable) for a user with App User AD role and Designer customer role.	"User has App User AD role and Designer customer role.
+User must have valid Microsoft account credentials and MFA configured."	1	Open the application URL.	The login page is displayed.	
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page with read-only access to SC and PSD.	
+				6	Navigate to SC section from the main menu.	User can access the SC functionalities.	
+				7	Attempt to create a new Site Concept.	Create action is disabled or not accessible.	
+				8	Attempt to edit an existing Site Concept.	Edit action is disabled or not accessible.	
+				9	Attempt to delete a Site Concept.	Delete action is disabled or not accessible.	
+				10	Navigate to PSD section from the main menu.	User can access the PSD functionalities.	
+				11	Attempt to create a new Proposed Site Deliverable.	Create action is disabled or not accessible.	
+				12	Attempt to edit an existing Proposed Site Deliverable.	Edit action is disabled or not accessible.	
+				13	Attempt to delete a Proposed Site Deliverable.	Delete action is disabled or not accessible.	
+					Access Control Verification:	All actions (Create, Edit, Delete) should be disabled and not accessible for the user.	
+TC-004	No AD Role with Designer Customer Role	Verify that a user with no AD role and Designer customer role cannot create/edit/delete SC (Site Concept) or PSD (Proposed Site Deliverable).	"User has no AD role and Designer customer role.
+User must have valid Microsoft account credentials and MFA configured."	1	Open the application URL.	The login page is displayed.	"Users with the Designer customer role but no AD Designer role should not be able to create, edit, or delete Site Concepts or PSDs.
+"
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page but cannot create/edit/delete SC or PSD.	
+				6	Navigate to SC section from the main menu.	User can access the SC functionalities but should see no options to create, edit, or delete.	
+				7	Attempt to create a new Site Concept.	Create action is disabled or not accessible.	
+				8	Attempt to edit an existing Site Concept.	Edit action is disabled or not accessible.	
+				9	Attempt to delete a Site Concept.	Delete action is disabled or not accessible.	
+				10	Navigate to PSD section from the main menu.	User can access the PSD functionalities but should see no options to create, edit, or delete.	
+				11	Attempt to create a new Proposed Site Deliverable.	Create action is disabled or not accessible.	
+				12	Attempt to edit an existing Proposed Site Deliverable.	Edit action is disabled or not accessible.	
+				13	Attempt to delete a Proposed Site Deliverable.	Delete action is disabled or not accessible.	
+					Access Control Verification:	All actions (Create, Edit, Delete) should be disabled and not accessible for the user.	
+TC-005	No AD Role with Approver Customer Role	Verify that a user with no AD role and an Approver customer role can read metadata, SC, and PSD but cannot approve or reject them.	"User has no AD role and an Approver customer role. 
+ User must have valid Microsoft account credentials and MFA configured."	1	Open the application URL.	The login page is displayed.	
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page with access to metadata, SC, and PSD functionalities.	
+				6	Navigate to the Metadata section from the main menu.	User can view metadata details.	
+				7	Navigate to SC section from the main menu.	User can access the SC functionalities and see the list of Site Concepts.	
+				8	Select a Site Concept to view details.	User can view the details of the selected Site Concept.	
+				9	Attempt to approve the selected Site Concept.	The approve action is disabled or not accessible.	
+				10	Attempt to reject the selected Site Concept.	The reject action is disabled or not accessible.	
+				11	Navigate to the PSD section from the main menu.	User can access the PSD functionalities and see the list of Proposed Site Deliverables.	
+				12	Select a Proposed Site Deliverable to view details.	User can view the details of the selected Proposed Site Deliverable.	
+				13	Attempt to approve the selected Proposed Site Deliverable.	The approve action is disabled or not accessible.	
+				14	Attempt to reject the selected Proposed Site Deliverable.	The reject action is disabled or not accessible.	
+					Access Control Verification:	All read actions should be accessible for the user, but approve/reject actions should be disabled.	
+TC-006	No Customer Role	Verify that a user with no customer role can see the list and details for SC and PSD but cannot perform any actions.	User has no customer role.	1	Open the application URL.	The login page is displayed.	
+				2	Log in with valid Microsoft account credentials for an existing user.	The MSAL login window is displayed.	
+				3	Click on the sign-in button.	The MSAL authentication window appears.	
+				4	Receive MFA code via SMS/Email/App.	User is prompted for MFA.	
+				5	Enter MFA code.	User is redirected to the home page.	
+				6	Navigate to the SC section from the main menu.	User can see the list of Site Concepts (SC) and can view the details.	
+				7	Attempt to view details of a specific Site Concept (SC).	User can view the details of the selected Site Concept (SC).	
+				8	Navigate to the PSD section from the main menu.	User can see the list of Proposed Site Deliverables (PSD) and can view the details.	
+				9	Attempt to view details of a specific Proposed Site Deliverable (PSD).	User can view the details of the selected Proposed Site Deliverable (PSD).	
+							
+SC-001	Successful Login with MFA	Verify that a registered user can log in successfully with valid credentials and complete MFA verification.	User is registered with valid credentials and MFA enabled.	1	Open the login page.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Click on the sign-in button.	The user is prompted for MFA verification.	
+				5	Receive MFA code via SMS/Email/App.	User is prompted to enter the MFA code.	
+				6	Enter the MFA code.	User is successfully logged in and redirected to the homepage.	
+SC-002	MFA Code Expiry	Verify that the user cannot complete the login process if the MFA code has expired.	User is registered with valid credentials and MFA enabled.	1	Open the login page.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Click on the sign-in button.	The user is prompted for MFA verification.	
+				5	Receive MFA code via SMS/Email/App.	User is prompted to enter the MFA code.	
+				6	Wait for the MFA code to expire.	The MFA code expires.	
+				7	Enter the expired MFA code.	An error message is displayed indicating the code has expired, and the login fails.	
+SC-003	Incorrect MFA Code	Verify that entering an incorrect MFA code prevents the user from logging in.	User is registered with valid credentials and MFA enabled.	1	Open the login page.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Click on the sign-in button.	The user is prompted for MFA verification.	
+				5	Receive MFA code via SMS/Email/App.	User is prompted to enter the MFA code.	
+				6	Enter an incorrect MFA code.	An error message is displayed indicating the MFA code is incorrect.	
+				7	Attempt to log in again.	User remains on the MFA prompt and is not logged in.	
+SC-004	Multi-Factor Authentication Bypass Option	Verify that the user can select a different method for receiving the MFA code if multiple options are available.	User is registered for multiple MFA methods.	1	Open the login page.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Click on the sign-in button.	The user is prompted for MFA verification.	
+				5	Select an alternative method for MFA code.	The alternative MFA method options are displayed.	
+				6	Choose a different method (e.g., SMS, email).	The selected method is confirmed.	
+				7	Receive the MFA code through the selected method.	User receives the MFA code through the alternative method.	
+				8	Enter the MFA code.	User successfully logs in and is redirected to the home page.	
+SC-005	Successful Login from Different Device	Verify that a user can log in from a different device using valid credentials and MFA.	User is registered with valid credentials and MFA enabled.	1	Open the login page on a different device.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Click on the sign-in button.	User is prompted for MFA verification.	
+				5	Receive MFA code via SMS/email/app.	User receives the MFA code through the selected method.	
+				6	Enter the MFA code.	User is redirected to the dashboard/homepage.	
+SC-006	Session Timeout Handling	Verify that the user is logged out after a session timeout and must log in again with MFA.	User is logged in successfully.	1	Log in with valid credentials.	User is redirected to the homepage.	
+				2	Wait for session timeout.	User is logged out automatically.	
+				3	Attempt to access a protected resource.	User is redirected to the login page.	
+				4	Enter valid username.	The username is entered successfully.	
+				5	Enter valid password.	The password is entered successfully.	
+				6	Click on the sign-in button.	User is prompted for MFA verification.	
+				7	Receive MFA code via SMS/email/app.	User receives the MFA code through the selected method.	
+				8	Enter the MFA code.	User is redirected to the dashboard/homepage.	
+SC-007	MFA Retry Limit	Verify that after exceeding the maximum number of failed MFA attempts, the user cannot log in.	User is registered with valid credentials and MFA enabled.	1	Open the login page.	The login page is displayed.	
+				2	Enter valid username.	The username is entered successfully.	
+				3	Enter valid password.	The password is entered successfully.	
+				4	Enter incorrect MFA code (3 times).	User is prompted for MFA verification each time.	
+				5	Enter incorrect MFA code again.	Error message: "Too many failed attempts. Please try again later."	
+SC-008	Login with Locked Account	Verify that a user cannot log in if their account is locked after multiple failed login attempts.	User account is locked due to multiple failures.	1	Open the login page.	The login page is displayed.	
+				2	Enter locked username.	The locked username is entered successfully.	
+				3	Enter any password.	The password is entered successfully.	
+				4	Click on the sign-in button.	Error message: "Account is locked."	
